@@ -1,0 +1,24 @@
+string pangrams(string s) {
+    string res;
+    int a[26];
+    int x=1;
+    for(int i=0;i<s.size();i++){
+        if(s[i]<'a'){
+            s[i]+=32;
+        }
+        a[s[i]-'a']++;
+    }
+    
+    for(char i=0;i<26;i++){
+        if(a[i]==0){
+       //    cout<<a[i]<<endl;
+           x=0;
+            res= "not pangram";
+        }
+    }
+    
+    if(x==1)
+    res= "pangram";
+    
+    return res;
+}
